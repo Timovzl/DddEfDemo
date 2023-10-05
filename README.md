@@ -24,7 +24,7 @@ Once you have created an uncompromising domain model, use the following steps to
 - Configure the default precision of (non-ID) decimals, settling on one suitable for the entire bounded context. (CoreDbContext.cs)
 - Configure conventions for reused value objects. (CoreDbContext.cs)
 
-### Specifics
+### Domain Model Specifics
 
 - Use a mapping class per entity. (CoreDbContext.cs; Mappings directory)
 - For an entity property that is a value object to be stored in-row, use `OwnsOne()` and custom column names. (ProductMapping.cs)
