@@ -1,0 +1,10 @@
+<Project>
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<Nullable>Enable</Nullable>
+		<ImplicitUsings>Enable</ImplicitUsings>
+		<ManagePackageVersionsCentrally>True</ManagePackageVersionsCentrally>
+	</PropertyGroup>
+
+</Project>

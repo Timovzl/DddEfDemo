@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<AssemblyName>Architect.DddEfDemo.DddEfDemo.Testing.Common</AssemblyName>
+		<RootNamespace>Architect.DddEfDemo.DddEfDemo.Testing.Common</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<!-- SYSLIB1045: Use 'GeneratedRegexAttribute' - not necessary for tests -->
+		<NoWarn>SYSLIB1045</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Moq" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Domain\Domain.csproj" />
+		<ProjectReference Include="..\Infrastructure.Databases\Infrastructure.Databases.csproj" />
+	</ItemGroup>
+
+</Project>

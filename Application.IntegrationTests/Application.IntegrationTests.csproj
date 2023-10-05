@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<AssemblyName>Architect.DddEfDemo.DddEfDemo.Application.IntegrationTests</AssemblyName>
+		<RootNamespace>Architect.DddEfDemo.DddEfDemo.Application.IntegrationTests</RootNamespace>
+		<IsPackable>False</IsPackable>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<!-- SYSLIB1045: Use 'GeneratedRegexAttribute' - not necessary for tests -->
+		<NoWarn>SYSLIB1045</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="appsettings*.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" />
+		<PackageReference Include="xunit" />
+		<PackageReference Include="xunit.runner.visualstudio">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="coverlet.collector">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Api\Api.csproj" />
+		<ProjectReference Include="..\Application\Application.csproj" />
+		<ProjectReference Include="..\Infrastructure.Databases\Infrastructure.Databases.csproj" />
+		<ProjectReference Include="..\Testing.Common\Testing.Common.csproj" />
+	</ItemGroup>
+
+</Project>

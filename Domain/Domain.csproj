@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<AssemblyName>Architect.DddEfDemo.DddEfDemo.Domain</AssemblyName>
+		<RootNamespace>Architect.DddEfDemo.DddEfDemo.Domain</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<!-- IDE0079: Remove unnecessary suppression // Used to suppress nullability warnings for reconstitution constructors -->
+		<NoWarn>IDE0079</NoWarn>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<InternalsVisibleTo Include="$(AssemblyName).UnitTests" />
+		<InternalsVisibleTo Include="Architect.DddEfDemo.DddEfDemo.Application.IntegrationTests" />
+		<InternalsVisibleTo Include="Architect.DddEfDemo.DddEfDemo.Application.UnitTests" />
+		<InternalsVisibleTo Include="Architect.DddEfDemo.DddEfDemo.Testing.Common" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Architect.DomainModeling" />
+		<PackageReference Include="Architect.Identities" />
+		<PackageReference Include="Newtonsoft.Json" />
+		<PackageReference Include="prometheus-net.AspNetCore" />
+		<PackageReference Include="Scrutor" />
+	</ItemGroup>
+
+</Project>

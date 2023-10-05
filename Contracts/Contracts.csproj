@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<!-- Any 3.1+ target provides nullable annotations -->
+		<TargetFrameworks>net7.0;netstandard2.0</TargetFrameworks>
+		<AssemblyName>Architect.DddEfDemo.DddEfDemo.Contracts</AssemblyName>
+		<RootNamespace>Architect.DddEfDemo.DddEfDemo.Contracts</RootNamespace>
+		<Nullable>Enable</Nullable>
+		<ImplicitUsings>Enable</ImplicitUsings>
+		<LangVersion>11</LangVersion>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<Version>0.1.0</Version>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<InternalsVisibleTo Include="Architect.DddEfDemo.DddEfDemo.Application" />
+	</ItemGroup>
+
+</Project>
