@@ -106,17 +106,23 @@ internal sealed class CoreDbContext : DbContext, ICoreDatabase
 
 		#endregion
 
-		#region Conventions for Entities+ValueObjects, strings, and WrapperValueObjects
+		#region Conventions for Entities, ValueObjects, and WrapperValueObjects
 
 		// For entities and value objects, avoid ctors (reconstitution should not involve logic)
 		configurationBuilder.Conventions.Remove(typeof(ConstructorBindingConvention));
 		configurationBuilder.Conventions.Add(_ => new UninitializedInstantiationConvention());
 
-		// For string-based columns, compare their properties with case-sensitivity matching the columns
-		configurationBuilder.Conventions.Add(_ => new StringCasingConvention());
-
 		// For WrapperValueObjects, convert to/from their wrapped types and avoid ctors
 		configurationBuilder.Conventions.Add(_ => new WrapperValueObjectConversionConvention());
+
+		#endregion
+
+		#region Conventions for strings
+
+		// For string-based columns, compare their properties with case-sensitivity matching the columns
+		// Although are value objects specify their own equality, EF compares properties marked as keys in their primitive form
+		// Usually, keys should be compared case-sensitively, making this convention mostly semantic
+		configurationBuilder.Conventions.Add(_ => new StringCasingConvention());
 
 		#endregion
 
