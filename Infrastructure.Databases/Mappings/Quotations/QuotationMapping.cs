@@ -28,6 +28,9 @@ internal sealed class QuotationMapping : IEntityTypeConfiguration<Quotation>
 
 		// Map a collection of value objects to a JSON blob
 		// Use a structural comparer for equality checks
+		// Note that the alternative of OwnsOne(x => x.Lines, linesBuilder => linesBuilder.ToJson()) will NOT compare correctly
+		// However, the future alternative of ComplexType(x => x.Lines, linesBuilder => linesBuilder.ToJson()) should compare correctly, allow serializer specification, and allow collation specification
+		// Regardless, ToJson() is rarely useful for a collection, since querying into contents of a collection stored in a blob tends to be inefficient and overly specificc
 		builder.Property(x => x.Lines)
 			.HasConversion(
 				codeValue => JsonSerializer.Serialize(codeValue, (JsonSerializerOptions?)null),
